@@ -1,0 +1,352 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --brand-navy: #062B5C;
+    --brand-dark-navy: #031D3D;
+    --brand-blue: #1267D6;
+    --brand-light-blue: #EAF4FF;
+    --brand-green: #19A974;
+    --brand-orange: #F5A623;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #031D3D;
+    background-color: #F8FAFC;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  html.dark,
+  body.dark,
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  html.dark body,
+  body.dark,
+  [data-theme="dark"] body {
+    color: #F8FAFC;
+    background-color: #020617;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* ============================================================
+   LIGHT THEME ACCESSIBILITY CONTRAST ENHANCEMENTS
+   ============================================================ */
+:root:not(.dark) .text-slate-400,
+html:not(.dark) .text-slate-400 {
+  color: #64748B;
+}
+
+:root:not(.dark) .text-slate-500,
+html:not(.dark) .text-slate-500 {
+  color: #475569;
+}
+
+/* ============================================================
+   GLOBAL HIGH-CONTRAST DARK MODE THEME ADAPTATION
+   (Placed outside @layer base with !important for supreme precedence)
+   ============================================================ */
+html.dark .text-\[\#031D3D\],
+body.dark .text-\[\#031D3D\],
+[data-theme="dark"] .text-\[\#031D3D\],
+html.dark [class*="text-[#031D3D]"],
+[data-theme="dark"] [class*="text-[#031D3D]"] {
+  color: #F8FAFC !important;
+}
+
+html.dark .text-\[\#062B5C\],
+body.dark .text-\[\#062B5C\],
+[data-theme="dark"] .text-\[\#062B5C\],
+html.dark [class*="text-[#062B5C]"],
+[data-theme="dark"] [class*="text-[#062B5C]"] {
+  color: #F1F5F9 !important;
+}
+
+html.dark .text-\[\#021429\],
+body.dark .text-\[\#021429\],
+[data-theme="dark"] .text-\[\#021429\],
+html.dark [class*="text-[#021429]"],
+[data-theme="dark"] [class*="text-[#021429]"] {
+  color: #F8FAFC !important;
+}
+
+html.dark .text-slate-900,
+body.dark .text-slate-900,
+[data-theme="dark"] .text-slate-900 {
+  color: #F8FAFC !important;
+}
+
+html.dark .text-slate-800,
+body.dark .text-slate-800,
+[data-theme="dark"] .text-slate-800 {
+  color: #F1F5F9 !important;
+}
+
+html.dark .text-slate-700,
+body.dark .text-slate-700,
+[data-theme="dark"] .text-slate-700 {
+  color: #E2E8F0 !important;
+}
+
+html.dark .text-slate-600,
+body.dark .text-slate-600,
+[data-theme="dark"] .text-slate-600 {
+  color: #CBD5E1 !important;
+}
+
+html.dark .text-slate-500,
+body.dark .text-slate-500,
+[data-theme="dark"] .text-slate-500 {
+  color: #94A3B8 !important;
+}
+
+/* Fallback: If an element explicitly retains a white/light background in dark mode, preserve dark text */
+html.dark .bg-white:not([class*="dark:bg-"]) .text-\[\#031D3D\],
+html.dark .bg-white:not([class*="dark:bg-"]) [class*="text-[#031D3D]"],
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .text-\[\#031D3D\],
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) [class*="text-[#031D3D]"],
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) .text-\[\#031D3D\],
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) [class*="text-[#031D3D]"],
+[data-theme="dark"] [class*="bg-white/"]:not([class*="dark:bg-"]) .text-\[\#031D3D\],
+[data-theme="dark"] [class*="bg-white/"]:not([class*="dark:bg-"]) [class*="text-[#031D3D]"] {
+  color: #031D3D !important;
+}
+
+html.dark .bg-white:not([class*="dark:bg-"]) .text-slate-900,
+html.dark .bg-white:not([class*="dark:bg-"]) .text-slate-800,
+html.dark .bg-white:not([class*="dark:bg-"]) .text-slate-700,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .text-slate-900,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .text-slate-800,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .text-slate-700,
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) .text-slate-900,
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) .text-slate-800,
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) .text-slate-700 {
+  color: #0F172A !important;
+}
+
+html.dark .bg-white:not([class*="dark:bg-"]) .text-slate-600,
+html.dark .bg-white:not([class*="dark:bg-"]) .text-slate-500,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .text-slate-600,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .text-slate-500,
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) .text-slate-600,
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) .text-slate-500 {
+  color: #334155 !important;
+}
+
+html.dark .bg-white:not([class*="dark:bg-"]) .text-slate-400,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .text-slate-400,
+html.dark [class*="bg-white/"]:not([class*="dark:bg-"]) .text-slate-400 {
+  color: #64748B !important;
+}
+
+html.dark .bg-white:not([class*="dark:bg-"]) .bg-slate-50,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .bg-slate-50 {
+  background-color: #F8FAFC !important;
+}
+
+html.dark .bg-white:not([class*="dark:bg-"]) .border-slate-200,
+[data-theme="dark"] .bg-white:not([class*="dark:bg-"]) .border-slate-200 {
+  border-color: #E2E8F0 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder,
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #94A3B8;
+}
+
+html.dark .bg-\[\#F8FAFC\],
+body.dark .bg-\[\#F8FAFC\],
+[data-theme="dark"] .bg-\[\#F8FAFC\] {
+  background-color: #020617 !important;
+}
+
+html.dark .bg-\[\#EAF4FF\],
+body.dark .bg-\[\#EAF4FF\],
+[data-theme="dark"] .bg-\[\#EAF4FF\] {
+  background-color: rgba(18, 103, 214, 0.18) !important;
+}
+
+html.dark .bg-\[\#F0F7FF\],
+body.dark .bg-\[\#F0F7FF\],
+[data-theme="dark"] .bg-\[\#F0F7FF\] {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+}
+
+html.dark .border-\[\#D8E9FF\],
+body.dark .border-\[\#D8E9FF\],
+[data-theme="dark"] .border-\[\#D8E9FF\] {
+  border-color: rgba(18, 103, 214, 0.35) !important;
+}
+
+html.dark .bg-slate-50,
+body.dark .bg-slate-50,
+[data-theme="dark"] .bg-slate-50 {
+  background-color: rgba(15, 23, 42, 0.75) !important;
+}
+
+html.dark .border-slate-100,
+body.dark .border-slate-100,
+[data-theme="dark"] .border-slate-100,
+html.dark .border-slate-200,
+body.dark .border-slate-200,
+[data-theme="dark"] .border-slate-200 {
+  border-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+html.dark .divide-slate-100 > * + *,
+body.dark .divide-slate-100 > * + *,
+[data-theme="dark"] .divide-slate-100 > * + * {
+  border-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(18, 103, 214, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(18, 103, 214, 0.4);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(6, 43, 92, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Pulse glow for Live tracking */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(25, 169, 116, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(25, 169, 116, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: 10;
+}
+
+/* ============================================================
+   NIEL INTELLIGENCE & TELEMETRY COMMAND CENTER STYLES
+   ============================================================ */
+.glass-panel {
+  background: rgba(8, 15, 30, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 16px rgba(56, 189, 248, 0.05);
+}
+
+.glass-panel-subtle {
+  background: rgba(10, 20, 38, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(14, 28, 52, 0.85);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.glass-button {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+}
+
+@keyframes corridorPulse {
+  0% { opacity: 0.75; stroke-dashoffset: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0.75; stroke-dashoffset: -20; }
+}
+
+.maplibregl-popup-content {
+  background: rgba(8, 15, 30, 0.9) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  border-radius: 1rem !important;
+  color: #f8fafc !important;
+  padding: 0 !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2) !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgba(8, 15, 30, 0.9) !important;
+}
+
+.maplibregl-popup-close-button {
+  color: #94a3b8 !important;
+  font-size: 1.25rem !important;
+  padding: 0.5rem 0.75rem !important;
+}
+.maplibregl-popup-close-button:hover {
+  color: #38bdf8 !important;
+  background: transparent !important;
+}
+
+.pulse-marker-safe {
+  animation: safeGlow 2.5s infinite;
+}
+
+.pulse-marker-alert {
+  animation: alertGlow 1.8s infinite;
+}
+
+@keyframes safeGlow {
+  0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7); }
+  70% { box-shadow: 0 0 0 14px rgba(6, 182, 212, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+}
+
+@keyframes alertGlow {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8); }
+  70% { box-shadow: 0 0 0 16px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+

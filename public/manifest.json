@@ -1,0 +1,35 @@
+{
+  "name": "SAFRO — AI Travel Companion",
+  "short_name": "SAFRO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#031D3D",
+  "theme_color": "#062B5C",
+  "description": "Plan smarter, travel within budget, and navigate safely with SAFRO.",
+  "icons": [
+    {
+      "src": "/safro-icon.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/safro-icon.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Live Navigation",
+      "url": "/trips/trip_manali_01/live",
+      "icons": [{ "src": "/safro-icon.jpeg", "sizes": "192x192" }]
+    },
+    {
+      "name": "NIEL AI Chat",
+      "url": "/niel-ai",
+      "icons": [{ "src": "/safro-icon.jpeg", "sizes": "192x192" }]
+    }
+  ]
+}
